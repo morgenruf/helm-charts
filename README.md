@@ -1,25 +1,49 @@
 # Morgenruf Helm Charts
 
-Official Helm charts for [Morgenruf](https://morgenruf.dev) — hosted at `charts.morgenruf.dev`.
+Official Helm chart repository for [Morgenruf](https://morgenruf.dev) — open-source Slack standup bot.
 
 ## Usage
 
-```bash
-# OCI (recommended)
-helm upgrade --install morgenruf \
-  oci://ghcr.io/morgenruf/helm/morgenruf \
-  --namespace morgenruf --create-namespace \
-  --set secret.slackBotToken="xoxb-..." \
-  --set secret.slackSigningSecret="..."
+### Option 1 — Traditional Helm repo (recommended)
 
-# Classic Helm repo
+```bash
 helm repo add morgenruf https://charts.morgenruf.dev
 helm repo update
-helm install morgenruf morgenruf/morgenruf
+helm install morgenruf morgenruf/morgenruf \
+  --namespace morgenruf \
+  --create-namespace \
+  --set slack.clientId="YOUR_CLIENT_ID" \
+  --set slack.clientSecret="YOUR_CLIENT_SECRET" \
+  --set slack.signingSecret="YOUR_SIGNING_SECRET" \
+  --set postgresql.enabled=true
 ```
 
-## Charts
+### Option 2 — OCI (Helm 3.8+)
 
-| Chart | Description | Version |
-|-------|-------------|---------|
-| [morgenruf](./charts/morgenruf) | Self-hosted Slack standup bot | ![version](https://img.shields.io/github/v/release/morgenruf/morgenruf) |
+```bash
+helm install morgenruf \
+  oci://ghcr.io/morgenruf/charts/morgenruf \
+  --namespace morgenruf \
+  --create-namespace \
+  --set slack.clientId="YOUR_CLIENT_ID" \
+  --set slack.clientSecret="YOUR_CLIENT_SECRET" \
+  --set slack.signingSecret="YOUR_SIGNING_SECRET"
+```
+
+## Configuration
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `slack.clientId` | Slack OAuth Client ID | `""` |
+| `slack.clientSecret` | Slack OAuth Client Secret | `""` |
+| `slack.signingSecret` | Slack Signing Secret | `""` |
+| `postgresql.enabled` | Deploy bundled PostgreSQL | `true` |
+| `externalDatabase.url` | External PostgreSQL URL | `""` |
+| `app.url` | Public bot URL | `https://api.morgenruf.dev` |
+| `resend.apiKey` | Resend API key for emails | `""` |
+
+## Links
+
+- 🌐 [morgenruf.dev](https://morgenruf.dev)
+- 📚 [docs.morgenruf.dev/helm](https://docs.morgenruf.dev/helm)
+- 💻 [github.com/morgenruf/morgenruf](https://github.com/morgenruf/morgenruf)
