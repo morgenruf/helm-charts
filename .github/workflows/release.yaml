@@ -27,7 +27,7 @@ jobs:
 
       - name: Fetch latest chart from morgenruf/morgenruf
         run: |
-          git clone https://github.com/morgenruf/morgenruf.git /tmp/morgenruf-src
+          git clone --depth 1 https://github.com/morgenruf/morgenruf.git /tmp/morgenruf-src
           helm dependency update /tmp/morgenruf-src/app/helm/morgenruf
           helm package /tmp/morgenruf-src/app/helm/morgenruf --destination ./charts
 
