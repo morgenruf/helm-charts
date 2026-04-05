@@ -1,49 +1,55 @@
 # Morgenruf Helm Charts
 
-Official Helm chart repository for [Morgenruf](https://morgenruf.dev) — open-source Slack standup bot.
+Official Helm chart repository for [Morgenruf](https://morgenruf.dev) — self-hosted, open-source Slack standup bot.
 
-## Usage
-
-### Option 1 — Traditional Helm repo (recommended)
+## Add the repo
 
 ```bash
 helm repo add morgenruf https://charts.morgenruf.dev
 helm repo update
-helm install morgenruf morgenruf/morgenruf \
-  --namespace morgenruf \
-  --create-namespace \
+```
+
+## Install (minimal — quickstart)
+
+```bash
+helm upgrade --install morgenruf morgenruf/morgenruf \
+  --namespace morgenruf --create-namespace \
   --set slack.clientId="YOUR_CLIENT_ID" \
   --set slack.clientSecret="YOUR_CLIENT_SECRET" \
   --set slack.signingSecret="YOUR_SIGNING_SECRET" \
-  --set postgresql.enabled=true
+  --set externalDatabase.url="postgresql://user:pass@host:5432/morgenruf" \
+  --set flaskSecretKey="$(openssl rand -hex 32)" \
+  --set app.url="https://api.your-domain.com"
 ```
 
-### Option 2 — OCI (Helm 3.8+)
+## Required values
 
-```bash
-helm install morgenruf \
-  oci://ghcr.io/morgenruf/charts/morgenruf \
-  --namespace morgenruf \
-  --create-namespace \
-  --set slack.clientId="YOUR_CLIENT_ID" \
-  --set slack.clientSecret="YOUR_CLIENT_SECRET" \
-  --set slack.signingSecret="YOUR_SIGNING_SECRET"
-```
+| Parameter | Description |
+|---|---|
+| `slack.clientId` | Slack app Client ID (from Basic Information) |
+| `slack.clientSecret` | Slack app Client Secret — 32 hex chars |
+| `slack.signingSecret` | Slack Signing Secret — 32 hex chars (≠ clientSecret!) |
+| `externalDatabase.url` | PostgreSQL URL: `postgresql://user:pass@host:5432/db` |
+| `flaskSecretKey` | Random 32-byte hex: `openssl rand -hex 32` |
+| `app.url` | Public HTTPS URL where the bot is reachable |
 
-## Configuration
+## Optional values
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `slack.clientId` | Slack OAuth Client ID | `""` |
-| `slack.clientSecret` | Slack OAuth Client Secret | `""` |
-| `slack.signingSecret` | Slack Signing Secret | `""` |
-| `postgresql.enabled` | Deploy bundled PostgreSQL | `true` |
-| `externalDatabase.url` | External PostgreSQL URL | `""` |
-| `app.url` | Public bot URL | `https://api.morgenruf.dev` |
-| `resend.apiKey` | Resend API key for emails | `""` |
+| Parameter | Default | Description |
+|---|---|---|
+| `resend.apiKey` | `""` | Resend API key for welcome & digest emails |
+| `ingress.enabled` | `true` | Disable for Cloudflare Tunnel |
+| `ingress.className` | `"nginx"` | Ingress class name |
+| `postgresql.enabled` | `false` | Bundled PostgreSQL (testing only) |
+
+## Available charts
+
+| Chart | Version | Description |
+|---|---|---|
+| `morgenruf/morgenruf` | 0.3.0 | Self-hosted Slack standup bot |
 
 ## Links
 
 - 🌐 [morgenruf.dev](https://morgenruf.dev)
-- 📚 [docs.morgenruf.dev/helm](https://docs.morgenruf.dev/helm)
+- 📚 [docs.morgenruf.dev](https://docs.morgenruf.dev)
 - 💻 [github.com/morgenruf/morgenruf](https://github.com/morgenruf/morgenruf)
