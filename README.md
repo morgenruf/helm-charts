@@ -1,5 +1,9 @@
 # Morgenruf Helm Charts
 
+[![Chart](https://img.shields.io/badge/helm-charts.morgenruf.dev-0f1689)](https://charts.morgenruf.dev)
+[![Release](https://img.shields.io/github/v/release/morgenruf/morgenruf?label=app&color=2ea043)](https://github.com/morgenruf/morgenruf/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Official Helm chart repository for [Morgenruf](https://morgenruf.dev) — self-hosted, open-source Slack standup bot.
 
 ## Add the repo
@@ -53,3 +57,7 @@ helm upgrade --install morgenruf morgenruf/morgenruf \
 - 🌐 [morgenruf.dev](https://morgenruf.dev)
 - 📚 [docs.morgenruf.dev](https://docs.morgenruf.dev)
 - 💻 [github.com/morgenruf/morgenruf](https://github.com/morgenruf/morgenruf)
+
+---
+
+<sub>Part of [Morgenruf](https://github.com/morgenruf/morgenruf), the self-hosted Slack standup bot &middot; [morgenruf.dev](https://morgenruf.dev) &middot; [docs](https://docs.morgenruf.dev) &middot; [status](https://status.morgenruf.dev)</sub>
