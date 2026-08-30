@@ -3,14 +3,14 @@ entries:
   morgenruf:
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2026-08-30T07:30:00.393117013Z"
+    created: "2026-08-30T08:05:45.988760159Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
       repository: https://charts.bitnami.com/bitnami
       version: 18.8.13
     description: Self-hosted Slack standup bot with PostgreSQL
-    digest: dd00841e32bb1236f55b75d811f43231e9466298fd436f8c5fd9072cadfd7b46
+    digest: f9604daf77d1838865fce862f1ac41eb83a55d08dd617ecf6c05c51ae8be1fcb
     home: https://morgenruf.dev
     keywords:
     - slack
@@ -29,7 +29,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2026-08-30T07:30:00.387026738Z"
+    created: "2026-08-30T08:05:45.98272392Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -55,7 +55,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-08-30T07:30:00.381093461Z"
+    created: "2026-08-30T08:05:45.973899249Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -81,7 +81,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-08-30T07:30:00.3758848Z"
+    created: "2026-08-30T08:05:45.966429864Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -105,4 +105,4 @@ entries:
     urls:
     - https://charts.morgenruf.dev/charts/morgenruf-0.2.0.tgz
     version: 0.2.0
-generated: "2026-08-30T07:30:00.369874386Z"
+generated: "2026-08-30T08:05:45.959802742Z"
