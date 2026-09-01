@@ -2,8 +2,34 @@ apiVersion: v1
 entries:
   morgenruf:
   - apiVersion: v2
+    appVersion: 1.5.0
+    created: "2026-09-01T00:11:19.557099776Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.8.13
+    description: Self-hosted Slack standup bot with PostgreSQL
+    digest: 1e910f9ceb49782ba403e36eb237683bb1254402b80f90493ecd4aabb3ad5f22
+    home: https://morgenruf.dev
+    keywords:
+    - slack
+    - standup
+    - bot
+    maintainers:
+    - email: hello@morgenruf.dev
+      name: morgenruf
+      url: https://morgenruf.dev
+    name: morgenruf
+    sources:
+    - https://github.com/morgenruf/morgenruf
+    type: application
+    urls:
+    - https://charts.morgenruf.dev/charts/morgenruf-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
     appVersion: 1.4.0
-    created: "2026-08-30T08:27:37.881132284Z"
+    created: "2026-09-01T00:11:19.550609189Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -29,7 +55,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2026-08-30T08:27:37.875860825Z"
+    created: "2026-09-01T00:11:19.544495835Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -55,7 +81,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-08-30T08:27:37.870816697Z"
+    created: "2026-09-01T00:11:19.538354525Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -81,7 +107,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-08-30T08:27:37.865196122Z"
+    created: "2026-09-01T00:11:19.532912794Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -105,4 +131,4 @@ entries:
     urls:
     - https://charts.morgenruf.dev/charts/morgenruf-0.2.0.tgz
     version: 0.2.0
-generated: "2026-08-30T08:27:37.859951799Z"
+generated: "2026-09-01T00:11:19.526916384Z"
