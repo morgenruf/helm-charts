@@ -2,8 +2,34 @@ apiVersion: v1
 entries:
   morgenruf:
   - apiVersion: v2
+    appVersion: 1.6.0
+    created: "2026-09-03T16:53:49.446606998Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.8.13
+    description: Self-hosted Slack standup bot with PostgreSQL
+    digest: baa4933d6602ff701b5ec5c95aede0a2692849dbe8ada59af0735ce316dbb0b8
+    home: https://morgenruf.dev
+    keywords:
+    - slack
+    - standup
+    - bot
+    maintainers:
+    - email: hello@morgenruf.dev
+      name: morgenruf
+      url: https://morgenruf.dev
+    name: morgenruf
+    sources:
+    - https://github.com/morgenruf/morgenruf
+    type: application
+    urls:
+    - https://charts.morgenruf.dev/charts/morgenruf-0.7.0.tgz
+    version: 0.7.0
+  - apiVersion: v2
     appVersion: 1.5.0
-    created: "2026-09-01T00:11:19.557099776Z"
+    created: "2026-09-03T16:53:49.440136278Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -29,7 +55,7 @@ entries:
     version: 0.6.0
   - apiVersion: v2
     appVersion: 1.4.0
-    created: "2026-09-01T00:11:19.550609189Z"
+    created: "2026-09-03T16:53:49.43393658Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -55,7 +81,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2026-09-01T00:11:19.544495835Z"
+    created: "2026-09-03T16:53:49.427586756Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -81,7 +107,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-09-01T00:11:19.538354525Z"
+    created: "2026-09-03T16:53:49.422017367Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -107,7 +133,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-09-01T00:11:19.532912794Z"
+    created: "2026-09-03T16:53:49.415871856Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -131,4 +157,4 @@ entries:
     urls:
     - https://charts.morgenruf.dev/charts/morgenruf-0.2.0.tgz
     version: 0.2.0
-generated: "2026-09-01T00:11:19.526916384Z"
+generated: "2026-09-03T16:53:49.409907709Z"
