@@ -22,13 +22,13 @@ jobs:
       - name: Install Helm
         uses: azure/setup-helm@v5
 
-      - name: Add Bitnami repo
-        run: helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo update
-
+      # The chart has no subchart dependencies since morgenruf/morgenruf#131:
+      # the bundled PostgreSQL is a StatefulSet in the chart itself, because
+      # Bitnami withdrew the images their subchart pulled. Nothing here needs
+      # a third-party chart repository to be reachable any more.
       - name: Fetch latest chart from morgenruf/morgenruf
         run: |
           git clone --depth 1 https://github.com/morgenruf/morgenruf.git /tmp/morgenruf-src
-          helm dependency update /tmp/morgenruf-src/app/helm/morgenruf
           helm package /tmp/morgenruf-src/app/helm/morgenruf --destination ./charts
 
       - name: Generate index.yaml
