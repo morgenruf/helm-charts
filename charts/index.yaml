@@ -3,9 +3,9 @@ entries:
   morgenruf:
   - apiVersion: v2
     appVersion: 1.6.0
-    created: "2026-09-17T02:58:24.350148952Z"
+    created: "2026-09-17T02:59:32.288673345Z"
     description: Self-hosted Slack standup bot with PostgreSQL
-    digest: 5c5cd0e975054a5e1679e69c5053902d6499b2b37f4f48d9c94b1ac83769e3a7
+    digest: 1cc716e001f85ffdf6623c95eb7db38bf35e80503bbf47ed36bcd467e655fbc5
     home: https://morgenruf.dev
     keywords:
     - slack
@@ -24,7 +24,7 @@ entries:
     version: 0.9.0
   - apiVersion: v2
     appVersion: 1.6.0
-    created: "2026-09-17T02:58:24.349496714Z"
+    created: "2026-09-17T02:59:32.288072138Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -50,7 +50,7 @@ entries:
     version: 0.7.0
   - apiVersion: v2
     appVersion: 1.5.0
-    created: "2026-09-17T02:58:24.343843437Z"
+    created: "2026-09-17T02:59:32.282157724Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -76,7 +76,7 @@ entries:
     version: 0.6.0
   - apiVersion: v2
     appVersion: 1.4.0
-    created: "2026-09-17T02:58:24.338156886Z"
+    created: "2026-09-17T02:59:32.276435804Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -102,7 +102,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2026-09-17T02:58:24.33183906Z"
+    created: "2026-09-17T02:59:32.269941736Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -128,7 +128,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-09-17T02:58:24.325406235Z"
+    created: "2026-09-17T02:59:32.262480221Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -154,7 +154,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-09-17T02:58:24.319143827Z"
+    created: "2026-09-17T02:59:32.255909725Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -178,4 +178,4 @@ entries:
     urls:
     - https://charts.morgenruf.dev/charts/morgenruf-0.2.0.tgz
     version: 0.2.0
-generated: "2026-09-17T02:58:24.314206953Z"
+generated: "2026-09-17T02:59:32.25089106Z"
