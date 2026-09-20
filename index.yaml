@@ -2,8 +2,32 @@ apiVersion: v1
 entries:
   morgenruf:
   - apiVersion: v2
+    appVersion: 1.8.6
+    created: "2026-09-20T13:11:52.854359212Z"
+    description: Self-hosted Slack app for async standups, coffee chats, kudos and
+      insights
+    digest: 5af00da1cda7852fe9f608497adefa6c5a588e8f252bec8e1f32abc04e94ec20
+    home: https://morgenruf.dev
+    keywords:
+    - slack
+    - standup
+    - coffee-chats
+    - recognition
+    - bot
+    maintainers:
+    - email: hello@morgenruf.dev
+      name: morgenruf
+      url: https://morgenruf.dev
+    name: morgenruf
+    sources:
+    - https://github.com/morgenruf/morgenruf
+    type: application
+    urls:
+    - https://charts.morgenruf.dev/charts/morgenruf-0.11.6.tgz
+    version: 0.11.6
+  - apiVersion: v2
     appVersion: 1.7.5
-    created: "2026-09-17T09:40:55.184160987Z"
+    created: "2026-09-20T13:11:52.853658085Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: 811344aadb5a47ccfecb5b10713806f3b8c1199bda5d42a12ef26119a9c577c5
@@ -27,7 +51,7 @@ entries:
     version: 0.10.6
   - apiVersion: v2
     appVersion: 1.7.5
-    created: "2026-09-17T09:40:55.183659139Z"
+    created: "2026-09-20T13:11:52.853034072Z"
     description: Self-hosted Slack standup bot with PostgreSQL
     digest: 0e8b012b0739f712c802d7401f493cb4c2aae1b41300d7637ee66b0c157cb31f
     home: https://morgenruf.dev
@@ -48,7 +72,7 @@ entries:
     version: 0.10.5
   - apiVersion: v2
     appVersion: 1.6.0
-    created: "2026-09-17T09:40:55.216416227Z"
+    created: "2026-09-20T13:11:52.890750606Z"
     description: Self-hosted Slack standup bot with PostgreSQL
     digest: 1cc716e001f85ffdf6623c95eb7db38bf35e80503bbf47ed36bcd467e655fbc5
     home: https://morgenruf.dev
@@ -69,7 +93,7 @@ entries:
     version: 0.9.0
   - apiVersion: v2
     appVersion: 1.6.0
-    created: "2026-09-17T09:40:55.215519201Z"
+    created: "2026-09-20T13:11:52.890148584Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -95,7 +119,7 @@ entries:
     version: 0.7.0
   - apiVersion: v2
     appVersion: 1.5.0
-    created: "2026-09-17T09:40:55.210386939Z"
+    created: "2026-09-20T13:11:52.883806603Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -121,7 +145,7 @@ entries:
     version: 0.6.0
   - apiVersion: v2
     appVersion: 1.4.0
-    created: "2026-09-17T09:40:55.20473659Z"
+    created: "2026-09-20T13:11:52.877513669Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -147,7 +171,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2026-09-17T09:40:55.199080963Z"
+    created: "2026-09-20T13:11:52.871458493Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -173,7 +197,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-09-17T09:40:55.193984512Z"
+    created: "2026-09-20T13:11:52.86538528Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -199,7 +223,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-09-17T09:40:55.18901864Z"
+    created: "2026-09-20T13:11:52.860126717Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -223,4 +247,4 @@ entries:
     urls:
     - https://charts.morgenruf.dev/charts/morgenruf-0.2.0.tgz
     version: 0.2.0
-generated: "2026-09-17T09:40:55.183005522Z"
+generated: "2026-09-20T13:11:52.852052822Z"
