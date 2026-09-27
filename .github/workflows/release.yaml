@@ -3,6 +3,10 @@ name: Release Helm Chart
 on:
   push:
     branches: [main]
+  # Picks up a new chart version from morgenruf/morgenruf without a manual
+  # trigger. Runs that find nothing new stop at the version check below.
+  schedule:
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -19,24 +23,43 @@ jobs:
         with:
           fetch-depth: 0
 
+      # A published version must never be packaged again: a second package
+      # of the same version gets a new digest and breaks pinned installs.
+      - name: Check for a new chart version
+        id: version
+        run: |
+          git clone --depth 1 https://github.com/morgenruf/morgenruf.git /tmp/morgenruf-src
+          version=$(awk '/^version:/ {print $2}' /tmp/morgenruf-src/app/helm/morgenruf/Chart.yaml)
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if [ -f "charts/morgenruf-$version.tgz" ]; then
+            echo "Chart $version is already published."
+            echo "new=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Publishing chart $version."
+            echo "new=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Install Helm
+        if: steps.version.outputs.new == 'true'
         uses: azure/setup-helm@v5
 
       # The chart has no subchart dependencies since morgenruf/morgenruf#131:
       # the bundled PostgreSQL is a StatefulSet in the chart itself, because
       # Bitnami withdrew the images their subchart pulled. Nothing here needs
       # a third-party chart repository to be reachable any more.
-      - name: Fetch latest chart from morgenruf/morgenruf
+      - name: Package the chart
+        if: steps.version.outputs.new == 'true'
         run: |
-          git clone --depth 1 https://github.com/morgenruf/morgenruf.git /tmp/morgenruf-src
           helm package /tmp/morgenruf-src/app/helm/morgenruf --destination ./charts
 
       - name: Generate index.yaml
+        if: steps.version.outputs.new == 'true'
         run: |
           helm repo index ./charts --url https://charts.morgenruf.dev/charts
           cp ./charts/index.yaml ./index.yaml
 
       - name: Commit and push
+        if: steps.version.outputs.new == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -45,6 +68,7 @@ jobs:
           git push
 
       - name: Deploy to GitHub Pages
+        if: steps.version.outputs.new == 'true'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -53,9 +77,8 @@ jobs:
           cname: charts.morgenruf.dev
 
       - name: Push to GHCR OCI
+        if: steps.version.outputs.new == 'true'
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | helm registry login ghcr.io \
             --username ${{ github.actor }} --password-stdin
-          for chart in ./charts/*.tgz; do
-            helm push "$chart" oci://ghcr.io/morgenruf/charts
-          done
+          helm push "./charts/morgenruf-${{ steps.version.outputs.version }}.tgz" oci://ghcr.io/morgenruf/charts
