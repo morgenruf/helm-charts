@@ -2,8 +2,32 @@ apiVersion: v1
 entries:
   morgenruf:
   - apiVersion: v2
+    appVersion: 1.9.4
+    created: "2026-09-29T17:15:09.475992428Z"
+    description: Self-hosted Slack app for async standups, coffee chats, kudos and
+      insights
+    digest: c18c1156adbd2036bd939597a79fbaa75bd9a5e8fa3fef4196040cf488e40e10
+    home: https://morgenruf.dev
+    keywords:
+    - slack
+    - standup
+    - coffee-chats
+    - recognition
+    - bot
+    maintainers:
+    - email: hello@morgenruf.dev
+      name: morgenruf
+      url: https://morgenruf.dev
+    name: morgenruf
+    sources:
+    - https://github.com/morgenruf/morgenruf
+    type: application
+    urls:
+    - https://charts.morgenruf.dev/charts/morgenruf-0.13.4.tgz
+    version: 0.13.4
+  - apiVersion: v2
     appVersion: 1.9.1
-    created: "2026-09-29T00:02:53.611897367Z"
+    created: "2026-09-29T17:15:09.475269686Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: b70985080c512a8bce0151741a28cfe58ec45e6d47784b8c3636681f1a17199b
@@ -27,7 +51,7 @@ entries:
     version: 0.13.1
   - apiVersion: v2
     appVersion: 1.8.16
-    created: "2026-09-29T00:02:53.611202682Z"
+    created: "2026-09-29T17:15:09.474588132Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: f2f624c3523b3e842485897b56f98d951aabbb06f82062d6f9593a3573c6b478
@@ -51,7 +75,7 @@ entries:
     version: 0.12.9
   - apiVersion: v2
     appVersion: 1.8.15
-    created: "2026-09-29T00:02:53.610530529Z"
+    created: "2026-09-29T17:15:09.473888704Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: 95bf997b3f1eca19d73c2ed2af322d734db7f2e95c74ebc5ca3e90e9daf5074f
@@ -75,7 +99,7 @@ entries:
     version: 0.12.8
   - apiVersion: v2
     appVersion: 1.8.14
-    created: "2026-09-29T00:02:53.609741176Z"
+    created: "2026-09-29T17:15:09.473133021Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: c2203b1354e6fa14298e83f8eb5590cbdcd0b1f31de05920e6eeab29b11c49b3
@@ -99,7 +123,7 @@ entries:
     version: 0.12.7
   - apiVersion: v2
     appVersion: 1.8.13
-    created: "2026-09-29T00:02:53.608056143Z"
+    created: "2026-09-29T17:15:09.471366026Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: 08d46a6e1cf29c01cbe0fcc76c3e27297f6115b19fffb40915e4544bf51c850f
@@ -123,7 +147,7 @@ entries:
     version: 0.12.6
   - apiVersion: v2
     appVersion: 1.8.12
-    created: "2026-09-29T00:02:53.607321813Z"
+    created: "2026-09-29T17:15:09.470552534Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: 812190d3fc7e11fdc15e8f65251f5d0182b79948e9441be8195387d9d6869cb3
@@ -147,7 +171,7 @@ entries:
     version: 0.12.5
   - apiVersion: v2
     appVersion: 1.8.11
-    created: "2026-09-29T00:02:53.606602081Z"
+    created: "2026-09-29T17:15:09.469833781Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: 5d06dfa434427d94ab2e4e81751fbaadd3e6fe4504a3808409076cd51b4201bc
@@ -171,7 +195,7 @@ entries:
     version: 0.12.4
   - apiVersion: v2
     appVersion: 1.8.10
-    created: "2026-09-29T00:02:53.605389173Z"
+    created: "2026-09-29T17:15:09.469098265Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: 12f57dcf0c078a5ced4c72077929ff032704c670d2de8e5c33894eb5462fbb57
@@ -195,7 +219,7 @@ entries:
     version: 0.12.3
   - apiVersion: v2
     appVersion: 1.8.9
-    created: "2026-09-29T00:02:53.604123014Z"
+    created: "2026-09-29T17:15:09.468351519Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: 64493a9f2d6890580ab0b912724a68b35fe62e2b717914194d1b58380cec4f8e
@@ -219,7 +243,7 @@ entries:
     version: 0.12.2
   - apiVersion: v2
     appVersion: 1.8.8
-    created: "2026-09-29T00:02:53.60341835Z"
+    created: "2026-09-29T17:15:09.46764096Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: f90b348270ed883396a4677a6975596e475e612987a8995b5280f4cdcccaa6f1
@@ -243,7 +267,7 @@ entries:
     version: 0.12.1
   - apiVersion: v2
     appVersion: 1.8.7
-    created: "2026-09-29T00:02:53.602740517Z"
+    created: "2026-09-29T17:15:09.466941312Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: b0ec4677059d8a127e7c4b7832d68de1e572db21b998cede8d4da85f1beeb748
@@ -267,7 +291,7 @@ entries:
     version: 0.12.0
   - apiVersion: v2
     appVersion: 1.8.6
-    created: "2026-09-29T00:02:53.602000026Z"
+    created: "2026-09-29T17:15:09.466192772Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: 636d7763e38a72d6b63e2fc30daa97009f36173d6d306aa3c1c81c7ab3db82ef
@@ -291,7 +315,7 @@ entries:
     version: 0.11.6
   - apiVersion: v2
     appVersion: 1.7.5
-    created: "2026-09-29T00:02:53.601283119Z"
+    created: "2026-09-29T17:15:09.465506018Z"
     description: Self-hosted Slack app for async standups, coffee chats, kudos and
       insights
     digest: 811344aadb5a47ccfecb5b10713806f3b8c1199bda5d42a12ef26119a9c577c5
@@ -315,7 +339,7 @@ entries:
     version: 0.10.6
   - apiVersion: v2
     appVersion: 1.7.5
-    created: "2026-09-29T00:02:53.600693893Z"
+    created: "2026-09-29T17:15:09.464881931Z"
     description: Self-hosted Slack standup bot with PostgreSQL
     digest: 0e8b012b0739f712c802d7401f493cb4c2aae1b41300d7637ee66b0c157cb31f
     home: https://morgenruf.dev
@@ -336,7 +360,7 @@ entries:
     version: 0.10.5
   - apiVersion: v2
     appVersion: 1.6.0
-    created: "2026-09-29T00:02:53.648738321Z"
+    created: "2026-09-29T17:15:09.512272417Z"
     description: Self-hosted Slack standup bot with PostgreSQL
     digest: 1cc716e001f85ffdf6623c95eb7db38bf35e80503bbf47ed36bcd467e655fbc5
     home: https://morgenruf.dev
@@ -357,7 +381,7 @@ entries:
     version: 0.9.0
   - apiVersion: v2
     appVersion: 1.6.0
-    created: "2026-09-29T00:02:53.648149415Z"
+    created: "2026-09-29T17:15:09.511720565Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -383,7 +407,7 @@ entries:
     version: 0.7.0
   - apiVersion: v2
     appVersion: 1.5.0
-    created: "2026-09-29T00:02:53.641894745Z"
+    created: "2026-09-29T17:15:09.505580574Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -409,7 +433,7 @@ entries:
     version: 0.6.0
   - apiVersion: v2
     appVersion: 1.4.0
-    created: "2026-09-29T00:02:53.635504321Z"
+    created: "2026-09-29T17:15:09.499535191Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -435,7 +459,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2026-09-29T00:02:53.6294494Z"
+    created: "2026-09-29T17:15:09.493909541Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -461,7 +485,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-09-29T00:02:53.623725966Z"
+    created: "2026-09-29T17:15:09.487831215Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -487,7 +511,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-09-29T00:02:53.617928766Z"
+    created: "2026-09-29T17:15:09.481760091Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -511,4 +535,4 @@ entries:
     urls:
     - https://charts.morgenruf.dev/charts/morgenruf-0.2.0.tgz
     version: 0.2.0
-generated: "2026-09-29T00:02:53.599302797Z"
+generated: "2026-09-29T17:15:09.464097234Z"
