@@ -1,22 +1,19 @@
 apiVersion: v2
-appVersion: "1.4.0"
-dependencies:
-- condition: postgresql.enabled
-  name: postgresql
-  repository: https://charts.bitnami.com/bitnami
-  version: 15.x.x
-description: Self-hosted Slack standup bot with PostgreSQL
-home: https://morgenruf.dev
-keywords:
-- slack
-- standup
-- bot
-maintainers:
-- email: hello@morgenruf.dev
-  name: morgenruf
-  url: https://morgenruf.dev
 name: morgenruf
-sources:
-- https://github.com/morgenruf/morgenruf
+description: Self-hosted Slack app for async standups, coffee chats, kudos and insights
 type: application
-version: 0.5.0
+version: 0.14.28
+appVersion: "1.9.34"
+keywords:
+  - slack
+  - standup
+  - coffee-chats
+  - recognition
+  - bot
+home: https://morgenruf.dev
+sources:
+  - https://github.com/morgenruf/morgenruf
+maintainers:
+  - name: morgenruf
+    email: hello@morgenruf.dev
+    url: https://morgenruf.dev

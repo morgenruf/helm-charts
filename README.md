@@ -67,9 +67,17 @@ For anything with real data behind it, leave the bundled database off and point
 
 ## Available charts
 
-| Chart | Version | App | Description |
-|---|---|---|---|
-| `morgenruf/morgenruf` | 0.10.5 | 1.7.5 | Async standups, coffee chats, kudos and insights for Slack |
+| Chart | Description |
+|---|---|
+| `morgenruf/morgenruf` | Async standups, coffee chats, kudos and insights for Slack |
+
+Run `helm search repo morgenruf --versions` for the published versions.
+
+## Chart source
+
+The chart source lives in this repo, in [`morgenruf/`](morgenruf). It is the only copy: production and every published version are built from it.
+
+To change the chart, open a pull request here. CI lints it. On merge to `main`, a new `version` in `morgenruf/Chart.yaml` is packaged, added to `index.yaml`, published to [charts.morgenruf.dev](https://charts.morgenruf.dev) and pushed to `oci://ghcr.io/morgenruf/charts`. A version that is already published is never packaged again, so bump `version` with every change. On a Morgenruf release, bump `appVersion` to the new app version as well.
 
 ## Links
 

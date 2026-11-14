@@ -3,10 +3,8 @@ name: Release Helm Chart
 on:
   push:
     branches: [main]
-  # Picks up a new chart version from morgenruf/morgenruf without a manual
-  # trigger. Runs that find nothing new stop at the version check below.
-  schedule:
-    - cron: "*/30 * * * *"
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -28,10 +26,12 @@ jobs:
       - name: Check for a new chart version
         id: version
         run: |
-          git clone --depth 1 https://github.com/morgenruf/morgenruf.git /tmp/morgenruf-src
-          version=$(awk '/^version:/ {print $2}' /tmp/morgenruf-src/app/helm/morgenruf/Chart.yaml)
+          version=$(awk '/^version:/ {print $2}' morgenruf/Chart.yaml)
           echo "version=$version" >> "$GITHUB_OUTPUT"
-          if [ -f "charts/morgenruf-$version.tgz" ]; then
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "Pull request, lint only."
+            echo "new=false" >> "$GITHUB_OUTPUT"
+          elif [ -f "charts/morgenruf-$version.tgz" ]; then
             echo "Chart $version is already published."
             echo "new=false" >> "$GITHUB_OUTPUT"
           else
@@ -40,8 +40,10 @@ jobs:
           fi
 
       - name: Install Helm
-        if: steps.version.outputs.new == 'true'
         uses: azure/setup-helm@v5
+
+      - name: Lint the chart
+        run: helm lint morgenruf
 
       # The chart has no subchart dependencies since morgenruf/morgenruf#131:
       # the bundled PostgreSQL is a StatefulSet in the chart itself, because
@@ -50,7 +52,7 @@ jobs:
       - name: Package the chart
         if: steps.version.outputs.new == 'true'
         run: |
-          helm package /tmp/morgenruf-src/app/helm/morgenruf --destination ./charts
+          helm package morgenruf --destination ./charts
 
       - name: Generate index.yaml
         if: steps.version.outputs.new == 'true'
