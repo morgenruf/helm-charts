@@ -272,6 +272,17 @@ sentry:
   dsn: ""
   env: "production"
 
+# Prometheus metrics on their own container port, never through the frontend
+# or the public hostname. The PodMonitor is only rendered when the cluster has
+# the Prometheus Operator CRDs (kube-prometheus-stack).
+metrics:
+  enabled: true
+  port: 9090
+  podMonitor:
+    enabled: true
+    interval: 30s
+    labels: {}
+
 resources:
   requests:
     cpu: 50m
