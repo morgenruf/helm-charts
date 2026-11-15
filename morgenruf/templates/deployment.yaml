@@ -53,6 +53,10 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 3000
+            {{- if .Values.metrics.enabled }}
+            - name: metrics
+              containerPort: {{ .Values.metrics.port }}
+            {{- end }}
           securityContext:
             runAsNonRoot: true
             runAsUser: 1000
@@ -143,6 +147,8 @@ spec:
                 secretKeyRef:
                   name: {{ include "morgenruf.fullname" . }}-secret
                   key: LOG_LEVEL
+            - name: METRICS_PORT
+              value: {{ ternary .Values.metrics.port 0 .Values.metrics.enabled | quote }}
             - name: LOG_FORMAT
               value: {{ .Values.ops.logFormat | default "text" | quote }}
             - name: PURGE_INACTIVE_WORKSPACES
