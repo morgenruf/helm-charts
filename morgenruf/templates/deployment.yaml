@@ -197,6 +197,24 @@ spec:
                 secretKeyRef:
                   name: {{ include "morgenruf.fullname" . }}-secret
                   key: REDIS_URL
+            {{- if .Values.tracing.endpoint }}
+            # OpenTelemetry traces (OTLP over HTTP). The app turns tracing on only
+            # when the endpoint is set; metrics and logs keep their own paths.
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: {{ .Values.tracing.endpoint | quote }}
+            - name: OTEL_EXPORTER_OTLP_PROTOCOL
+              value: http/protobuf
+            - name: OTEL_SERVICE_NAME
+              value: {{ .Values.tracing.serviceName | default (include "morgenruf.fullname" .) | quote }}
+            - name: OTEL_RESOURCE_ATTRIBUTES
+              value: "k8s.namespace.name={{ .Release.Namespace }}"
+            - name: OTEL_METRICS_EXPORTER
+              value: none
+            - name: OTEL_LOGS_EXPORTER
+              value: none
+            - name: OTEL_PYTHON_EXCLUDED_URLS
+              value: "healthz,metrics"
+            {{- end }}
           volumeMounts:
             - name: teams-config
               mountPath: /app/teams.yaml

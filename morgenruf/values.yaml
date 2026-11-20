@@ -272,6 +272,13 @@ sentry:
   dsn: ""
   env: "production"
 
+# Optional: OpenTelemetry traces. An OTLP/HTTP endpoint, for example
+# http://tempo.monitoring:4318. Empty means no tracing (the default).
+tracing:
+  endpoint: ""
+  # Defaults to the release fullname.
+  serviceName: ""
+
 # Prometheus metrics on their own container port, never through the frontend
 # or the public hostname. The PodMonitor is only rendered when the cluster has
 # the Prometheus Operator CRDs (kube-prometheus-stack).
