@@ -206,8 +206,13 @@ spec:
               value: http/protobuf
             - name: OTEL_SERVICE_NAME
               value: {{ .Values.tracing.serviceName | default (include "morgenruf.fullname" .) | quote }}
+            - name: OTEL_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            # Pod and version on every span, so a trace says which pod and release served it.
             - name: OTEL_RESOURCE_ATTRIBUTES
-              value: "k8s.namespace.name={{ .Release.Namespace }}"
+              value: "k8s.namespace.name={{ .Release.Namespace }},k8s.pod.name=$(OTEL_POD_NAME),service.version={{ .Chart.AppVersion }},deployment.environment.name={{ .Values.sentry.env }}"
             - name: OTEL_METRICS_EXPORTER
               value: none
             - name: OTEL_LOGS_EXPORTER
